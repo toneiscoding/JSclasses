@@ -172,6 +172,31 @@ seattleHigh.addTeacher('Chase', 20)
 
 
 // 2. Create a factory class called "Portfolio" that creates and adds objects from the "Project" class.
+class Project {
+    constructor(name, teamMembers) {
+        this.name = name;
+        this.teamMembers = teamMembers;
+    }
+    logTeamMembers() {
+        console.log(this.teamMembers)
+    }
+}
+
+class Portfolio {
+    constructor(name, teamMembers){
+        this.name = name;
+        this.teamMembers = teamMembers;
+        this.timeline = [];
+    }
+    addProject(name, teamMembers){
+        let newTimeline = new Project(name, teamMembers)
+        this.timeline.push(newTimeline);
+    }
+}
+
+let perScholasPortfolio = new Portfolio('Tony\'s Portfolio', 0)
+perScholasPortfolio.addProject('DOM PROJECT', 4)
+
 // 3. Create a factory class called "Company" that creates and adds objects from the "Employee" class.
 class Employee {
     constructor(name,experience) {
